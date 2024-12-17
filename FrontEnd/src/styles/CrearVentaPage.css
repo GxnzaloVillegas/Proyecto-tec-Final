@@ -1,0 +1,220 @@
+:root {
+  --primary-color: #8385e4;
+  --primary-color-h2: #ffffff;
+  --primary-light: #bfdbfe;
+  --primary-dark: #6366f1;
+  --secondary-color: #cbd5e1;
+  --success-color: #86efac;
+  --success-dark: #4ade80;
+  --danger-color: #fca5a5;
+  --danger-dark: #f87171;
+  --warning-color: #fcd34d;
+  --background-color: #f8fafc;
+  --card-background: #ffffff;
+  --border-color: #e2e8f0;
+  --text-primary: #334155;
+  --text-secondary: #64748b;
+  --text-light: #94a3b8;
+  --shadow-sm: 0 2px 4px rgba(148, 163, 184, 0.1);
+  --shadow-md: 0 4px 6px rgba(148, 163, 184, 0.15);
+  --shadow-lg: 0 8px 12px rgba(148, 163, 184, 0.2);
+}
+
+/* Contenedor principal */
+.crear-venta-container {
+  padding: 1.5rem;
+  background-color: var(--background-color);
+  min-height: 100vh;
+}
+.boton-registrar{
+    background-color: var(--primary-color) !important;
+    color: var(--primary-color-h2) !important;
+    padding: 0.75rem 2rem !important;
+    min-width: 200px;
+    border: none !important;
+  }
+/* Estilos para la tarjeta principal */
+.venta-card {
+  background: var(--card-background);
+  border-radius: 1.5rem;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  border: none;
+}
+
+.venta-card .card-header {
+  background-color: var(--primary-color);
+  padding: 1.5rem;
+  border-bottom: none;
+  border-radius: 1rem 1rem 0 0;
+}
+
+.venta-card .card-header h2 {
+  color: var(--primary-color-h2);
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+/* Secciones */
+.section-title {
+  color: var(--text-primary);
+  font-size: 1.25rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Formularios */
+.form-control, .form-select {
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  padding: 0.625rem;
+  color: var(--text-primary);
+}
+
+.form-control:focus, .form-select:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 0.2rem rgba(131, 133, 228, 0.25);
+}
+
+.form-label {
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+/* Tabla de productos */
+.productos-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.productos-table thead th {
+  background-color: var(--primary-light);
+  color: var(--text-primary);
+  font-weight: 600;
+  padding: 1rem;
+  text-align: left;
+}
+
+/* Alineación específica para cada columna */
+.productos-table th:nth-child(1), 
+.productos-table td:nth-child(1) {
+  text-align: left;
+  width: 40%;
+}
+
+.productos-table th:nth-child(2), 
+.productos-table td:nth-child(2) {
+  text-align: center;
+  width: 15%;
+}
+
+.productos-table th:nth-child(3), 
+.productos-table td:nth-child(3) {
+  text-align: right;
+  width: 15%;
+}
+
+.productos-table th:nth-child(4), 
+.productos-table td:nth-child(4) {
+  text-align: right;
+  width: 15%;
+}
+
+.productos-table th:nth-child(5), 
+.productos-table td:nth-child(5) {
+  text-align: center;
+  width: 15%;
+}
+
+/* Botones */
+.btn-add-product {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.625rem 1.25rem;
+  background-color: var(--success-color);
+  color: var(--text-primary);
+  border: none;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.btn-add-product:hover {
+  background-color: var(--success-dark);
+  color: white;
+  transform: translateY(-1px);
+}
+
+.btn-action {
+  padding: 0.375rem 0.75rem;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  transition: all 0.2s ease;
+}
+
+.btn-edit {
+  color: var(--primary-color);
+  background-color: rgba(37, 99, 235, 0.1);
+  border: none;
+}
+
+.btn-delete {
+  color: var(--danger-color);
+  background-color: rgba(239, 68, 68, 0.1);
+  border: none;
+}
+
+/* Estados bloqueados */
+.form-select-custom.locked {
+  background-color: var(--secondary-color);
+  opacity: 0.8;
+  cursor: not-allowed;
+}
+
+/* Sección de productos */
+.productos-section {
+  background-color: var(--background-color);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  border: 1px solid var(--border-color);
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.4s ease-out;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .venta-card {
+    border-radius: 1rem;
+  }
+
+  .productos-section {
+    padding: 1rem;
+  }
+
+  .btn-group {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}

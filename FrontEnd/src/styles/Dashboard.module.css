@@ -1,0 +1,413 @@
+/* Layout Principal */
+.dashboardPage {
+  min-height: 100vh;
+  background-color: #f1f5f9;
+  padding: 1rem;
+}
+
+.dashboardWrapper {
+  max-width: 1920px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  overflow: hidden;
+}
+
+/* Header */
+.dashboardHeader {
+  margin-bottom: 2rem;
+}
+
+.headerContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.titleSection {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.title {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: #0f172a;
+  margin: 0;
+}
+
+.subtitle {
+  color: #64748b;
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+.dateSection {
+  color: #64748b;
+  font-size: 0.875rem;
+  background-color: #f8fafc;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+}
+
+/* Stats Cards */
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.statCard {
+  background: white;
+  border-radius: 12px;
+  padding: 1.25rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e2e8f0;
+  transition: all 0.2s ease;
+}
+
+.statCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.statHeader {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.statIcon {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+}
+
+.dailyIcon {
+  background-color: #e0f2fe;
+  color: #0284c7;
+}
+
+.weeklyIcon {
+  background-color: #f0fdf4;
+  color: #16a34a;
+}
+
+.monthlyIcon {
+  background-color: #fef3c7;
+  color: #d97706;
+}
+
+.statInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.statPeriod {
+  font-size: 0.75rem;
+  color: #64748b;
+  font-weight: 500;
+}
+
+.statLabel {
+  font-size: 0.875rem;
+  color: #64748b;
+}
+
+.statValue {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #0f172a;
+  margin: 1rem 0 0 0;
+}
+
+.trend {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.375rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  width: fit-content;
+}
+
+.trendUp {
+  background-color: #f0fdf4;
+  color: #16a34a;
+}
+
+.trendDown {
+  background-color: #fef2f2;
+  color: #dc2626;
+}
+
+/* Main Content */
+.mainContent {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 1.5rem;
+  min-width: 0;
+}
+
+.contentCard {
+  background: white;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  height: 100%;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.cardHeader {
+  padding: 1.25rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.headerTitle {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.headerIcon {
+  font-size: 1.25rem;
+  color: #0ea5e9;
+}
+
+.headerText {
+  font-size: 1rem;
+}
+
+/* Ajustes de la tabla */
+.tableContainer {
+  padding: 1rem;
+  overflow-x: auto;
+  flex: 1;
+  min-height: 0;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+/* Define anchos específicos para las columnas */
+.table th,
+.table td {
+  padding: 0.75rem;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Distribución de anchos de columna */
+.table th:nth-child(1),
+.table td:nth-child(1) {
+  width: 40%;
+}
+
+.table th:nth-child(2),
+.table td:nth-child(2),
+.table th:nth-child(3),
+.table td:nth-child(3) {
+  width: 20%;
+}
+
+.table th:nth-child(4),
+.table td:nth-child(4) {
+  width: 20%;
+}
+
+/* Ajuste de la badge para que no desborde */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.5rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+/* Responsive ajustado */
+@media (max-width: 1280px) {
+  .mainContent {
+    grid-template-columns: 1fr;
+  }
+  
+  .contentCard {
+    min-height: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboardPage {
+    padding: 0.5rem;
+  }
+
+  .dashboardWrapper {
+    padding: 1rem;
+  }
+
+  .table th,
+  .table td {
+    padding: 0.5rem;
+    font-size: 0.75rem;
+  }
+
+  /* Ajusta los anchos de columna para móviles */
+  .table th:nth-child(1),
+  .table td:nth-child(1) {
+    width: 35%;
+  }
+
+  .table th:nth-child(2),
+  .table td:nth-child(2),
+  .table th:nth-child(3),
+  .table td:nth-child(3) {
+    width: 20%;
+  }
+
+  .table th:nth-child(4),
+  .table td:nth-child(4) {
+    width: 25%;
+  }
+}
+
+.filterSection {
+  padding: 1.25rem;
+  border-bottom: 1px solid #e2e8f0;
+  background-color: #f8fafc;
+}
+
+.filterHeader {
+  margin-bottom: 1rem;
+}
+
+.filterTitle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #0f172a;
+  margin: 0;
+}
+
+.filterIcon {
+  color: #64748b;
+  font-size: 0.875rem;
+}
+
+.filterGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.filterGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.filterLabel {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #64748b;
+}
+
+.filterSelect,
+.filterInput {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  color: #0f172a;
+  background-color: white;
+  transition: all 0.2s ease;
+}
+
+.filterSelect:hover,
+.filterInput:hover {
+  border-color: #cbd5e1;
+}
+
+.filterSelect:focus,
+.filterInput:focus {
+  outline: none;
+  border-color: #0ea5e9;
+  box-shadow: 0 0 0 1px rgba(14, 165, 233, 0.2);
+}
+
+.filterSelect:disabled {
+  background-color: #f1f5f9;
+  cursor: not-allowed;
+}
+
+.filterActions {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 1rem;
+}
+
+.filterButton {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background-color: #0ea5e9;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.filterButton:hover {
+  background-color: #0284c7;
+}
+
+.filterButton:active {
+  transform: scale(0.98);
+}
+
+.buttonIcon {
+  font-size: 0.875rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .filterSection {
+    padding: 1rem;
+  }
+
+  .filterGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .filterActions {
+    justify-content: stretch;
+  }
+
+  .filterButton {
+    width: 100%;
+    justify-content: center;
+  }
+}

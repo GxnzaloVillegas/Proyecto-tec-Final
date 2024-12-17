@@ -1,0 +1,18 @@
+.spinner-icon {
+  animation: spin 1s linear infinite;
+  margin-right: 0.5rem;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.modal-backdrop.show {
+  opacity: 0.5;
+}
+
+.modal-header .close:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+} 

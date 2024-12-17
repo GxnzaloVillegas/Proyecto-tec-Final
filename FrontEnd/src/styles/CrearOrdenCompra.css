@@ -1,0 +1,524 @@
+:root {
+  --primary-color: #8385e4;
+  --primary-color-h2: #ffffff;
+  --primary-light: #bfdbfe;
+  --primary-dark:   #6366f1;;
+  --secondary-color: #cbd5e1;
+  --success-color: #86efac;
+  --success-dark: #4ade80;
+  --danger-color: #fca5a5;
+  --danger-dark: #f87171;
+  --warning-color: #fcd34d;
+  --background-color: #f8fafc;
+  --card-background: #ffffff;
+  --border-color: #e2e8f0;
+  --text-primary: #334155;
+  --text-secondary: #64748b;
+  --text-light: #94a3b8;
+  --shadow-sm: 0 2px 4px rgba(148, 163, 184, 0.1);
+  --shadow-md: 0 4px 6px rgba(148, 163, 184, 0.15);
+  --shadow-lg: 0 8px 12px rgba(148, 163, 184, 0.2);
+}
+
+/* Contenedor principal */
+.crear-orden-container {
+  padding: 1.5rem;
+  background-color: var(--background-color);
+  min-height: 100vh;
+}
+
+/* Estilos para la tarjeta principal */
+.orden-card {
+  background: var(--card-background);
+  border-radius: 1.5rem;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  border: none;
+}
+
+.orden-card .card-header {
+  background-color: var(--primary-color);
+  padding: 1.5rem;
+  border-bottom: none;
+  border-radius: 1rem 1rem 0 0;
+}
+
+.orden-card .card-header h2 {
+  color: var(--primary-color-h2);
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.boton-registrar {
+  background-color: var(--primary-color) !important;
+  color: var(--primary-color-h2) !important;
+  padding: 0.75rem 2rem !important;
+  min-width: 200px;
+  border: none !important;
+}
+
+.boton-registrar:hover {
+  background-color: var(--primary-dark) !important;
+  transform: translateY(-1px);
+  transition: all 0.2s ease;
+}
+/* Secciones */
+.section-container {
+  background-color: var(--bg-secondary);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.section-title {
+  color: var(--text-primary);
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid var(--border-color);
+}
+
+/* Formularios */
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-label {
+  color: var(--text-primary);
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.form-select-custom {
+  background-color: var(--bg-card);
+  border: 2px solid var(--border-color);
+  border-radius: 0.5rem;
+  padding: 0.625rem;
+  width: 100%;
+  transition: all 0.2s ease;
+}
+
+.form-select-custom:focus {
+  border-color: var(--primary-light);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.form-select-custom.locked {
+  background-color: var(--bg-secondary);
+  border-color: var(--border-color);
+  opacity: 0.8;
+  cursor: not-allowed;
+}
+
+/* Sección de productos */
+.productos-section {
+  background-color: var(--bg-secondary);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  border: 1px solid var(--border-color);
+}
+
+.add-product-form {
+  display: grid;
+  gap: 1rem;
+  align-items: end;
+}
+
+/* Tabla de productos */
+.productos-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.productos-table thead th {
+  background-color: var(--primary-light);
+  color: var(--text-primary);
+  font-weight: 600;
+  padding: 1rem;
+  text-align: left;
+}
+
+/* Alineación específica para cada columna */
+.productos-table th:nth-child(1), 
+.productos-table td:nth-child(1) {  /* Producto */
+  text-align: left;
+  width: 40%;
+}
+
+.productos-table th:nth-child(2), 
+.productos-table td:nth-child(2) {  /* Cantidad */
+  text-align: center;
+  width: 15%;
+}
+
+.productos-table th:nth-child(3), 
+.productos-table td:nth-child(3) {  /* Precio Unit. */
+  text-align: right;
+  width: 15%;
+}
+
+.productos-table th:nth-child(4), 
+.productos-table td:nth-child(4) {  /* Subtotal */
+  text-align: right;
+  width: 15%;
+}
+
+.productos-table th:nth-child(5), 
+.productos-table td:nth-child(5) {  /* Acciones */
+  text-align: center;
+  width: 15%;
+}
+
+/* Estilos para las celdas del cuerpo */
+.productos-table tbody td {
+  padding: 1rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+/* Estilos para el total */
+.productos-table tfoot td {
+  padding: 1rem;
+  font-weight: 600;
+  background-color: #f8fafc;
+}
+
+/* Botones */
+.btn-add-product {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.625rem 1.25rem;
+  background-color: var(--success-color);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.btn-add-product:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.btn-action {
+  padding: 0.375rem 0.75rem;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  transition: all 0.2s ease;
+}
+
+.btn-edit {
+  color: var(--primary-color);
+  background-color: rgba(37, 99, 235, 0.1);
+  border: none;
+}
+
+.btn-delete {
+  color: var(--danger-color);
+  background-color: rgba(239, 68, 68, 0.1);
+  border: none;
+}
+
+.btn-save {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 0.75rem 2rem;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.btn-save:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-1px);
+}
+
+/* Cantidad input group */
+.quantity-input-group {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.quantity-input {
+  width: 100px;
+  text-align: center;
+  padding: 0.375rem;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+}
+
+/* Mensajes de ayuda */
+.help-text {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+}
+
+.validation-message {
+  color: var(--danger-dark);
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.productos-table tbody tr {
+  animation: fadeIn 0.4s ease-out;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .crear-orden-container {
+    padding: 1rem;
+  }
+
+  .add-product-form {
+    grid-template-columns: 1fr;
+  }
+
+  .btn-add-product {
+    width: 100%;
+  }
+
+  .productos-table {
+    display: block;
+    overflow-x: auto;
+  }
+
+  .action-buttons {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: flex-end;
+  }
+
+  .orden-card {
+    border-radius: 1rem;
+  }
+
+  .productos-section {
+    padding: 1rem;
+  }
+
+  .total-section {
+    margin-top: 1.5rem;
+    padding: 1rem;
+  }
+}
+
+/* Estados de hover y focus */
+.form-select-custom:hover:not(.locked) {
+  border-color: var(--primary-color);
+}
+
+.btn-action:hover {
+  transform: translateY(-1px);
+}
+
+.btn-edit:hover {
+  background-color: rgba(37, 99, 235, 0.2);
+}
+
+.btn-delete:hover {
+  background-color: rgba(239, 68, 68, 0.2);
+}
+
+/* Loading states */
+.loading-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+}
+
+/* Tooltips y mensajes de error */
+.error-message {
+  color: var(--danger-color);
+  font-size: 0.875rem;
+  margin-top: 0.375rem;
+}
+
+/* Estilos para el total */
+.total-section {
+  background-color: var(--primary-light);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  margin-top: 2rem;
+}
+
+.total-amount {
+  color: var(--text-primary);
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+/* Estilos actualizados para los botones */
+.btn-primary {
+  background-color: var(--primary-color);
+  border: none;
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-dark);
+  color: white;
+}
+
+.btn-success {
+  background-color: var(--success-color);
+  border: none;
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.btn-success:hover {
+  background-color: var(--success-dark);
+  color: white;
+}
+
+/* Estilos para los formularios bloqueados */
+.form-select-custom.locked {
+  background-color: var(--bg-secondary);
+  border-color: var(--border-color);
+  opacity: 0.8;
+  cursor: not-allowed;
+}
+
+/* Estilos para la tabla */
+.productos-table thead th {
+  background-color: var(--primary-light);
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.productos-table tbody tr:hover {
+  background-color: var(--bg-secondary);
+}
+
+/* Botones de acción en la tabla */
+.action-button.edit {
+  background-color: var(--primary-light);
+  color: var(--text-primary);
+}
+
+.action-button.edit:hover {
+  background-color: var(--primary-color);
+}
+
+.action-button.delete {
+  background-color: var(--danger-color);
+  color: var(--text-primary);
+}
+
+.action-button.delete:hover {
+  background-color: var(--danger-dark);
+}
+
+/* Card principal con bordes más suaves */
+.orden-card {
+  border-radius: 1.5rem;
+  overflow: hidden;
+}
+
+.orden-card .card-header {
+  background-color: var(--primary-color);
+  padding: 1.5rem;
+}
+
+/* Sección de productos */
+.productos-section {
+  background-color: var(--bg-secondary);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  border: 1px solid var(--border-color);
+}
+
+/* Mensajes de ayuda y validación */
+.help-text {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+}
+
+.validation-message {
+  color: var(--danger-dark);
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Total section con diseño más suave */
+.total-section {
+  background-color: var(--primary-light);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  margin-top: 2rem;
+}
+
+.total-amount {
+  color: var(--text-primary);
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+/* Animaciones más suaves */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.4s ease-out;
+}
+
+/* Mejoras en la responsividad */
+@media (max-width: 768px) {
+  .orden-card {
+    border-radius: 1rem;
+  }
+
+  .productos-section {
+    padding: 1rem;
+  }
+
+  .total-section {
+    margin-top: 1.5rem;
+    padding: 1rem;
+  }
+} 

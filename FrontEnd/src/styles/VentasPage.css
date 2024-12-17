@@ -1,0 +1,40 @@
+/* Importar los estilos de OrdenCompraPage */
+@import './OrdenCompraPage.css'; 
+
+.stat-icon.total { 
+  background-color: #dcfce7;
+  color: #16a34a;
+}
+
+.stat-icon.average { 
+  background-color: #fef3c7;
+  color: #d97706;
+}
+
+.stat-icon.count { 
+  background-color: #e0e7ff;
+  color: #4f46e5;
+}
+
+.stat-icon.today { 
+  background-color: #fee2e2;
+  color: #dc2626;
+}
+
+.stat-icon.yesterday { 
+  background-color: #e0f2fe;
+  color: #0284c7;
+}
+
+.stat-icon.month { 
+  background-color: #f0fdf4;
+  color: #16a34a;
+}
+
+.text-success {
+  color: #16a34a !important;
+}
+
+.text-danger {
+  color: #dc2626 !important;
+}
